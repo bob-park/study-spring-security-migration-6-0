@@ -1,0 +1,40 @@
+## server
+
+## spring
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    url: jdbc:h2:mem:test
+    username: sa
+    password:
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+  thymeleaf:
+    cache: false
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+
+## logging
+logging:
+  charset:
+    console: UTF-8
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} ${LOG_LEVEL_PATTERN:%-5p} ${PID} --- [%15.15t] %-40.40logger{39} :%06L : %m%n"
+  level:
+    root: info
+    web: info
+    org.bobpark: debug
+    org.springframework.security: debug
